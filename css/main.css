@@ -10,6 +10,7 @@ body {
   min-height: 100vh;
 }
 .content-container {
+  display: flex;
   flex: 1 1 auto;
   padding-top: 10vh;
   width: 100%;
@@ -115,6 +116,53 @@ p {
 }
 .footer-nav a {
   color: #ccc;
+}
+
+/* カラムスタイル */
+.col-three {
+  display: flex;
+  flex: 1;
+}
+.col {
+  box-sizing: border-box;
+  padding: 2em;
+}
+.col-three .col ~ .col {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.col-three .col-nav {
+  flex: 0 1 15em;
+}
+.col-three .col-content { 
+  flex: 1;
+}
+.col-three .col-aside {
+  flex: 0 1 20em;
+}
+
+/* ギャラリースタイル */
+.gallery-thumbs {
+  height: 90vh;
+  overflow: scroll;
+}
+.gallery-thumbs > div {
+  cursor: pointer;
+}
+.gallery-thumbs img {
+  box-sizing: border-box;
+  box-shadow: 0 0 0 5px transparent;
+  display: inline-block;
+  margin: 0 0 10px;
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+}
+.gallery-thumbs img:hover {
+  opacity: 1;
+}
+.gallery-thumbs .current img {
+  box-shadow: 0 0 0 5px #ed6e2f;
+  opacity: 1;
 }
 
 /* ヒーロースタイル */
