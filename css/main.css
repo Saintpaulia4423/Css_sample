@@ -472,15 +472,15 @@ h4 {
   color: #fff;
   display: inline-block;
   font-family: helvetica, arial, sans;
-  font-size: 1rem;
+  font-size: 1.7rem;
   font-weight: bold;
-  height: 2.5em;
+  height: 1.5em;
   line-height: 1;
-  padding-top: 0.85em;
+  padding-top: 0.25em;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
-  width: 2.5em;
+  width: 1.5em;
 }
 .social-list > li {
   display: inline-block;
@@ -619,7 +619,7 @@ h4 {
     background-color: #444;
     box-sizing: border-box;
     left: 0;
-    max-height: 0;
+    height: 0;
     overflow: hidden;
     padding: 0;
     position: absolute;
@@ -651,7 +651,7 @@ h4 {
     padding-right: 0;
   }
   .mobile-menu-check:checked ~ .header-nav {
-    max-height: 90vh;
+    height: 90vh;
   }
   .mobile-menu-check:checked ~ .show-mobile-menu::after {
     background-color: #000;
