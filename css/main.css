@@ -101,7 +101,7 @@ h4 {
 .header-nav a, .drop-trigger {
   color: #fff;
 }
-.nav-links a, .drop-trigger {
+.nav-links a, .drop-trigger, .show-mobile-menu {
   font-size: 0.8rem;
   font-weight: bold;
   text-decoration: none;
@@ -142,7 +142,7 @@ h4 {
   right: 0;
   z-index: 9;
 }
-.drop-menu::before {
+.header .drop-menu::before {
   border: 0.6em solid;
   border-color: transparent transparent #fff;
   content: "";
@@ -182,6 +182,44 @@ h4 {
   background-color: rgba(0, 0, 0, 0.1);
   color: #333;
 }
+.footer .drop-trigger:after {
+  display: none;
+}
+.footer .dropdown:hover .drop-menu {
+  display: none;
+}
+.foobar .dropdown .drop-menu:hover{
+  display: block;
+}
+.footer .dropdown:active .drop-menu {
+  bottom: 3em;
+  display: block;
+  padding: 0;
+}
+.footer .drop-menu:after {
+  border: 0.6em solid;
+  border-color: #fff transparent transparent;
+  bottom: -1em;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 1em;
+  width: 0;
+}
+.footer .drop-menu li:first-child {
+  width: 96%;
+}
+.footer .drop-menu > li {
+  margin: 0;
+}
+.footer .drop-trigger {
+  padding-right: 0;
+}
+
+/* モバイルメニュースタイル */
+.mobile-menu-check, .show-mobile-menu {
+  display: none;
+}
 
 
 /* フッタースタイル */
@@ -207,12 +245,6 @@ h4 {
 }
 .footer-nav a {
   color: #ccc;
-}
-.footer .dropdown:hover .drop-menu, .footer .drop-trigger::after {
-  display: none;
-}
-.footer .drop-trigger {
-  padding-right: 0;
 }
 
 /* カラムスタイル */
@@ -571,6 +603,65 @@ h4 {
   }
   .header-logo {
     left: auto;
+  }
+
+  /* モバイルメニュースタイル */
+  .show-mobile-menu {
+    display: block;
+    float: right;
+    font-weight: blod;
+    margin-top: 1.5vh;
+    padding: 1.5em;
+    position: relative;
+    text-transform: uppercase;
+  }
+  .header-nav {
+    background-color: #444;
+    box-sizing: border-box;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 10vh;
+    transition: all 0.5s ease-in-out;
+    width: 100vw;
+    z-index: 9;
+  }
+  .header-nav li {
+    display: block;
+    margin-top: 1em;
+  }
+  .header-nav li ~ li {
+    border: 0;
+    padding: 0;
+  }
+  .header-nav li:last-child {
+    margin-bottom: 1em;
+  }
+  .header-nav li:first-child a {
+    color: #fff;
+  }
+  /* ナビゲーションメニューのドロップダウンを非表示にする */
+  .header-nav .dropdown:hover .drop-menu, .header-nav .drop-trigger:after {
+    display: none;
+  }
+  .header-nav .drop-trigger {
+    padding-right: 0;
+  }
+  .mobile-menu-check:checked ~ .header-nav {
+    max-height: 90vh;
+  }
+  .mobile-menu-check:checked ~ .show-mobile-menu::after {
+    background-color: #000;
+    color: #ed6e2f;
+    content: "CLOSE";
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 1.5em;
+    width: 100%;
   }
 
   /* homeページスタイル */
