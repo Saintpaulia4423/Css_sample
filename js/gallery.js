@@ -10,9 +10,14 @@ function activateGallery() {
     let description = gallerInfo.querySelector(".description");
 
     thumbnails.forEach(function (thumbnail) {
+        let newImageSrc = thumbnail.dataset.largeVersion;
+        let largeVersion = new Image();
+        largeVersion.src = newImageSrc;
+
+
         thumbnail.addEventListener("click", function () {
             // クリックされたサムネイル画像をメイン画像として設定する
-            let newImageSrc = thumbnail.dataset.largeVersion;
+
             mainImage.setAttribute("src", newImageSrc);
             mainImage.setAttribute("alt", thumbnail.alt);
 
